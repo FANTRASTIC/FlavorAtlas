@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flavors of the World | Created in Nepal</title>
+    <meta
+      name="description"
+      content="A global recipe discovery experience crafted from Nepal, featuring cuisines, recipe pins, spicy picks, and API-ready recipe search."
+    />
+    <meta property="og:title" content="Flavors of the World" />
+    <meta property="og:description" content="Every culture. Every kitchen. Global recipes curated with warmth from Nepal." />
+    <meta property="og:image" content="assets/world-map-watercolor.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="flags flags-top" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="brand" href="#top" aria-label="Flavors of the World home">
+        <span class="logo-icon" data-component="LogoIcon" aria-hidden="true">
+          <img src="assets/flavor-atlas-logo-clean.png" alt="" />
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="active" href="#top">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#regions">Regions</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <button class="icon-button search-toggle" type="button" aria-label="Open search">
+        <span class="search-icon"></span>
+      </button>
+    </header>
+
+    <nav class="mobile-drawer" aria-label="Mobile navigation">
+      <a href="#top">Home</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#regions">Regions</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="search-panel" role="search" aria-label="Recipe search">
+      <label>
+        <span>Search world recipes</span>
+        <input id="global-search" type="search" placeholder="Try butter chicken, ramen, tacos..." />
+      </label>
+      <div id="search-results" class="search-results"></div>
+    </div>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <div class="logo-line" aria-hidden="true"></div>
+          <p class="stamp stamp-nepal">Welcome to Nepal</p>
+          <p class="stamp stamp-cook"><span aria-hidden="true">🍴</span> Let's Cook Together</p>
+          <p class="stamp stamp-travel-copy">Travel. Taste. Connect.</p>
+          <div class="hero-headline-wrap">
+            <svg class="headline-flourish left" viewBox="0 0 80 54" aria-hidden="true">
+              <path d="M58 8c-18 10-30 22-38 38M23 30c-6-8-11-11-18-12 4 9 9 14 18 12Zm17-12c-2-8 1-13 6-18 4 9 2 15-6 18Zm-2 18c8-4 15-4 23 0-8 6-16 7-23 0Z" />
+            </svg>
+            <h1 id="hero-title">Every Culture.<br />Every Kitchen.</h1>
+            <svg class="headline-flourish right" viewBox="0 0 80 54" aria-hidden="true">
+              <path d="M22 8c18 10 30 22 38 38M57 30c6-8 11-11 18-12-4 9-9 14-18 12ZM40 18c2-8-1-13-6-18-4 9-2 15 6 18Zm2 18c-8-4-15-4-23 0 8 6 16 7 23 0Z" />
+            </svg>
+          </div>
+          <p class="hero-subtitle">
+            Discover authentic recipes from around the globe, curated with warmth and crafted from Nepal.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#recipes">Explore Recipes <span>&rarr;</span></a>
+            <a class="button secondary" href="#regions">Browse Regions <span>◎</span></a>
+          </div>
+        </div>
+
+        <div class="map-stage reveal" id="regions">
+          <img src="assets/world-map-watercolor.png" alt="Watercolor world map" class="map-art" />
+          <div class="map-ornament compass" aria-hidden="true">N</div>
+          <div class="map-ornament torii" aria-hidden="true"></div>
+          <div class="map-ornament blossom" aria-hidden="true"></div>
+          <div class="map-ornament moroccan-tile" aria-hidden="true"></div>
+          <div class="map-ornament palm-tree" aria-hidden="true"></div>
+          <div class="map-ornament sailing-ship" aria-hidden="true">
+            <svg viewBox="0 0 90 70">
+              <path d="M42 8v48M42 14 18 50h24Zm5 12 26 28H47Z" />
+              <path d="M10 58c12 5 58 5 72 0" />
+            </svg>
+          </div>
+          <div id="map-pins" class="map-pins"></div>
+          <p class="drag-hint">Drag to explore the atlas</p>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="recipes">
+        <div class="section-title">
+          <span></span>
+          <h2>Explore Cuisines</h2>
+          <span></span>
+          <a href="#regions">See all &rsaquo;</a>
+        </div>
+        <div class="carousel-wrap">
+          <button class="round-nav" type="button" data-scroll="left" aria-label="Scroll cuisines left">&lsaquo;</button>
+          <div id="cuisine-cards" class="cuisine-cards" tabindex="0"></div>
+          <button class="round-nav" type="button" data-scroll="right" aria-label="Scroll cuisines right">&rsaquo;</button>
+        </div>
+      </section>
+
+      <section class="section-block spicy-panel reveal" id="collections">
+        <div class="panel-heading">
+          <h2 class="spicy-heading"><span aria-hidden="true">🌶️</span> Spicy Picks</h2>
+          <a href="#recipes">View all &rsaquo;</a>
+        </div>
+        <div id="spicy-picks" class="spicy-picks"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="about">
+      <div class="flags flags-bottom" aria-hidden="true"></div>
+      <div class="footer-mountains" aria-hidden="true"></div>
+      <svg class="lotus" viewBox="0 0 120 28" aria-hidden="true">
+        <path d="M60 24C45 18 37 10 34 2c11 2 20 8 26 22Zm0 0C75 18 83 10 86 2 75 4 66 10 60 24Zm0 0C52 17 51 9 60 1c9 8 8 16 0 23Z" />
+        <path d="M16 14h28M76 14h28" />
+      </svg>
+      <div class="social-links" aria-label="Social links">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+        </a>
+        <a href="#" aria-label="Pinterest">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3 19c-.1-.8-.2-2 .1-2.9l1.2-5.1s-.3-.7-.3-1.7c0-1.6.9-2.8 2.1-2.8 1 0 1.5.7 1.5 1.6 0 1-.6 2.5-.9 3.9-.3 1.2.6 2.1 1.8 2.1 2.1 0 3.7-2.2 3.7-5.4 0-2.8-2-4.8-4.9-4.8-3.3 0-5.3 2.5-5.3 5.1 0 1 .4 2.1.9 2.7.1.1.1.2.1.4l-.3 1.2c-.1.4-.3.5-.7.3-1.4-.7-2.3-2.7-2.3-4.3 0-3.5 2.6-6.8 7.5-6.8 3.9 0 7 2.8 7 6.5 0 3.9-2.5 7-5.9 7-1.1 0-2.2-.6-2.6-1.3l-.7 2.7c-.3 1-.9 2.2-1.3 3A10 10 0 1 0 12 2Z" /></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22 12s0-3.3-.4-4.8c-.2-.8-.8-1.4-1.6-1.6C18.5 5.2 12 5.2 12 5.2s-6.5 0-8 .4c-.8.2-1.4.8-1.6 1.6C2 8.7 2 12 2 12s0 3.3.4 4.8c.2.8.8 1.4 1.6 1.6 1.5.4 8 .4 8 .4s6.5 0 8-.4c.8-.2 1.4-.8 1.6-1.6.4-1.5.4-4.8.4-4.8Z" /><path d="m10 15 5-3-5-3z" /></svg>
+        </a>
+      </div>
+    </footer>
+
+    <dialog id="recipe-dialog" class="recipe-dialog">
+      <button type="button" class="dialog-close" aria-label="Close recipe">×</button>
+      <div id="recipe-detail"></div>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
