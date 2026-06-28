@@ -1,6 +1,14 @@
 # Flavor Atlas
 
+(aight a human note before the ai description: 
+It's a recepie Database or say a Booklet for every cuisine of every country in the world -hopefully-. Idk its just a prototype for now, but I am hoping that it somewhat covers around 10 countries soon, around 1000 recepies is my goal. Let's see.)
+
 Flavor Atlas is a single-page global recipe discovery prototype with a warm parchment atlas aesthetic, interactive cuisine map, animated prayer flags, and curated cuisine cards. It was created as a static front-end prototype that can be opened directly in a browser and later connected to a real recipe API or database.
+
+Photo reference for anyone who is too tired to do any kind of opening (this is pretty much it, for now): 
+
+<img width="1911" height="822" alt="image" src="https://github.com/user-attachments/assets/af8cdf6a-d502-4072-b4be-971f6009814f" />
+<img width="1907" height="740" alt="image" src="https://github.com/user-attachments/assets/3544b2ac-7175-4ce3-8388-e1a66dbd3c23" />
 
 ## Live Preview
 
